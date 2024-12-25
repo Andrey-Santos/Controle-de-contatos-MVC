@@ -3,7 +3,7 @@
 
 // Write your JavaScript code.
 
-$('#table-contatos').DataTable({
+$('.table-search').DataTable({
     "ordering": true,
     "paging": true,
     "searching": true,
