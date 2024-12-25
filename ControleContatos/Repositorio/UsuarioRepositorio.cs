@@ -59,5 +59,10 @@ namespace ControleContatos.Repositorio
             _bancoContext.SaveChanges();
             return true;
         }
+
+        public UsuarioModel BuscarPorLogin(string login)
+        {
+            return _bancoContext.Usuario.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper());
+        }
     }
 }
