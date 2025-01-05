@@ -1,9 +1,11 @@
+using ControleContatos.Filters;
 using ControleContatos.Models;
 using Microsoft.AspNetCore.Mvc;
 using System.Diagnostics;
 
 namespace ControleContatos.Controllers
 {
+    [PaginaParaUsurioLogado]
     public class HomeController : Controller
     {
         public IActionResult Index()
