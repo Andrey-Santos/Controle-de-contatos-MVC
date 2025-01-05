@@ -65,5 +65,10 @@ namespace ControleContatos.Repositorio
         {
             return _bancoContext.Usuario.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper());
         }
+
+        public UsuarioModel BuscarPorEmailELogin(string email, string login)
+        {
+            return _bancoContext.Usuario.FirstOrDefault(x => x.Login.ToUpper() == login.ToUpper() && x.Login.ToUpper() == login.ToUpper());
+        }
     }
 }
