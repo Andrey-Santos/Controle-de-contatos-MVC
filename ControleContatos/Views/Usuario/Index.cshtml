@@ -1,16 +1,17 @@
 ﻿@model List<UsuarioModel>
 @{
     ViewData["Title"] = "Listagem de usuários";
-}   
+}
 <div class="text-center">
 
     <div class="d-grid gap-2 d-md-flex justify-content-md-start">
         <a class="btn btn-primary" role="button" asp-controller="Usuario" asp-action="Criar">Adicionar</a>
     </div>
 
-    <br/>
+    <br />
 
-    @if(TempData["MensagemSucesso"] != null){
+    @if (TempData["MensagemSucesso"] != null)
+    {
         <div class="alert alert-success" role="alert">
             <button type="button" class="btn btn-danger btn-sm close-alert" arial-label="Close">X</button>
             @TempData["MensagemSucesso"]
@@ -24,7 +25,7 @@
             @TempData["MensagemErro"]
         </div>
     }
-    
+
     <h1 class="display-4">Listagem de usuários</h1>
 
     <table class="table table-search" id="table-usuarios">
@@ -40,9 +41,9 @@
             </tr>
         </thead>
         <tbody>
-            @if(Model != null && Model.Any())
+            @if (Model != null && Model.Any())
             {
-                foreach(var usuario in Model)
+                foreach (var usuario in Model)
                 {
                     <tr>
                         <th scope="row">@usuario.Id</th>
