@@ -1,5 +1,6 @@
 ﻿using ControleContatos.Data;
 using ControleContatos.Models;
+using Microsoft.EntityFrameworkCore;
 
 namespace ControleContatos.Repositorio
 {
@@ -18,7 +19,9 @@ namespace ControleContatos.Repositorio
 
         public List<UsuarioModel> BuscarTodos()
         {
-            return _bancoContext.Usuario.ToList();
+            return _bancoContext.Usuario
+                .Include(x=> x.Contatos)
+                .ToList();
         }
 
         public UsuarioModel Adicionar(UsuarioModel usuario)

@@ -35,3 +35,16 @@ $('.table-search').DataTable({
 $('.close-alert').click(function () {
     $('.alert').hide('hide');
 })
+
+$('.btn-total-contatos').click(function () {
+    var usuarioId = $(this).attr('usuario-id');
+
+        $.ajax({
+            type: "GET",
+            url: "/Usuario/ListarContatosPorUsuarioId/" + usuarioId,
+            success: function (result) {
+                $("#lista-contatos-usuario").html(result);
+            }
+        });
+})
+
